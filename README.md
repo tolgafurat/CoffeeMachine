@@ -7,7 +7,7 @@ Machine starts with 400 ml of water, 540 ml of milk, 120 g of coffee beans, 9 di
 - For the latte, the coffee machine needs 350 ml of water, 75 ml of milk, and 20 g of coffee beans. It costs $7.
 - And for the cappuccino, the coffee machine needs 200 ml of water, 100 ml of milk, and 12 g of coffee. It costs $6.
 
-An user can: 
+A user can: 
 - Buy a coffee
 - Fill the machine with water, milk, coffee beans and disposable cups
 - Take all the money in machine
