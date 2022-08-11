@@ -22,18 +22,15 @@ public class CoffeeMachine {
 
     public static void main(String[] args) {
         boolean end;
-        while (true) {
+        do {
             if (Machine.state == Machine.State.WAITING) {
                 System.out.print("Write action (buy, fill, take, remaining, exit):\n> ");
             }
             end = Machine.handleAction(scanner.next());
-            if (end) {
-                break;
-            }
-        }
+        } while (!end);
     }
 
-    public class Machine {
+    public static class Machine {
         static boolean end;
         private static int money = 550;
         private static int water = 400;
@@ -51,7 +48,7 @@ public class CoffeeMachine {
             switch (state) {
                 case WAITING:
                     if ("buy".equals(action)) {
-                        System.out.print("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino:\n> ");
+                        System.out.print("What do you want to buy? 1 - espresso, 2 - latte, 3 - cappuccino, back - to main menu:\n> ");
                         state = State.BUY;
                     } else if ("fill".equals(action)) {
                         System.out.print("Write how many ml of water do you want to add:\n> ");
@@ -100,25 +97,25 @@ public class CoffeeMachine {
 
         static void handleBuyAction(String choice) {
             switch (choice) {
-                case "back":
+                case "back" -> {
                     state = State.WAITING;
-                    return;
-                case "1":
+                }
+                case "1" -> {
                     makeCoffee(ESPRESSO_WATER_PER_CUP, ESPRESSO_MILK_PER_CUP, ESPRESSO_COFFEE_PER_CUP);
                     processPayment(ESPRESSO_PRICE);
-                    break;
-                case "2":
+                }
+                case "2" -> {
                     makeCoffee(LATTE_WATER_PER_CUP, LATTE_MILK_PER_CUP, LATTE_COFFEE_PER_CUP);
                     processPayment(LATTE_PRICE);
-                    break;
-                case "3":
+                }
+                case "3" -> {
                     makeCoffee(CAPPUCCINO_WATER_PER_CUP, CAPPUCCINO_MILK_PER_CUP, CAPPUCCINO_COFFEE_PER_CUP);
                     processPayment(CAPPUCCINO_PRICE);
-                    break;
-                default:
+                }
+                default -> {
                     System.out.println("Unexpected option.");
                     state = State.BUY;
-                    break;
+                }
             }
         }
 
