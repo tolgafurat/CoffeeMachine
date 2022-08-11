@@ -1,4 +1,4 @@
-# CoffeeMachine
+# Coffee Machine
 Simple Coffee Machine made with Java. 
 
 Machine starts with 400 ml of water, 540 ml of milk, 120 g of coffee beans, 9 disposable cups, $550 in cash.
