@@ -11,4 +11,4 @@ A user can:
 - Buy a coffee
 - Fill the machine with water, milk, coffee beans and disposable cups
 - Take all the money in machine
-- View de remaining items and money in machine
+- View the remaining items and money in machine
